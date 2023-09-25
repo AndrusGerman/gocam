@@ -1,6 +1,7 @@
 # GoCam
-
-
+In simple words it is a tool that allows you to take photos on windows with golang.
+Yes, this returns an image.Image.
+And of course I plan to make this work on Linux. The goal is to have a simple way to take a photo on linux and windows with golang
 ### Get Photo
 ```go
 package main
