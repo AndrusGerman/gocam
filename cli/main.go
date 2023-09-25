@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/AndrusGerman/gocam"
 )
 
@@ -15,5 +17,9 @@ func main() {
 		panic(err)
 	}
 
-	camera.GetPhoto()
+	photo, err := camera.GetPhoto()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Photo: ", photo)
 }

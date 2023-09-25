@@ -1,18 +1,8 @@
 package gocam
 
-import (
-	ffmpeg "github.com/u2takey/ffmpeg-go"
-)
-
-func main() {
-	// err := ffmpeg.Input("./a.mp4").
-	// 	Output("./out1.mp4", ffmpeg.KwArgs{"c:v": "libx265"}).
-	// 	OverWriteOutput().ErrorToStdOut().Run()
-}
-
-func none() {
-	ffmpeg.Input("")
-}
+// func none() {
+// 	ffmpeg.Input("").GetArgs()
+// }
 
 // old
 // ffmpeg -y -f vfwcap -r 25 -i 0 out.mp4
@@ -24,3 +14,9 @@ func none() {
 // ffmpeg -f dshow -i video="HP TrueVision HD Camera" out.mp4
 
 // ffmpeg -f dshow -i video="HP TrueVision HD Camera" -vframes 1 out.png^C
+
+// var err = ffmpeg.Input(fmt.Sprintf("video=\"%s\"", cam.cameraName), ffmpeg.KwArgs{
+// 	"f": "dshow",
+// }).Output("pipe:", ffmpeg.KwArgs{
+// 	"vframes": "1",
+// }).WithOutput(buffer).ErrorToStdOut().Run()

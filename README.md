@@ -1,7 +1,7 @@
 # GoCam
 
 
-### GetListDevices
+### Get Photo
 ```go
 package main
 
@@ -12,8 +12,21 @@ import (
 )
 
 func main() {
-	devices := gocam.GetListDevices()
-	fmt.Println(devices)
+	devices, err := gocam.GetListDevices()
+	if err != nil {
+		panic(err)
+	}
+
+	camera, err := gocam.NewCamera(devices[0])
+	if err != nil {
+		panic(err)
+	}
+
+	photo, err := camera.GetPhoto()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Photo: ", photo)
 }
 
 ```
